@@ -28,17 +28,19 @@ let drawStars = function() {
         ctx.closePath()
     }
 }
-    drawStars()
+    // drawStars()
 
     //function which makes stars moveable
 let motionOfStars = function() {
-    while(true) {
-        
+        for(let i = 0 ; i < arrayOfStars.length; i++){
+            let currentStar = arrayOfStars[i]
+            currentStar[0]++
+            currentStar[1]++
         }
-        // arrayOfStars.forEach(() => {
-        // arrayOfStars[i++][i++];
-        // });
-    }
-}
+        ctx.clearRect(0, 0, CANVAS.width, CANVAS.height);
+        drawStars()
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
 
-    motionOfStars()
+    setInterval(motionOfStars, 0)
+
+    // motionOfStars()
