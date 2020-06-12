@@ -1,4 +1,6 @@
 const Star = require("../Star.js")
+const Field = require("../Field.js")
+const generateStarsList = require("../Star.js").generateStarsList
 const assert = require('assert').strict;
 
 function testStarCreation() {
@@ -41,14 +43,15 @@ testStarMove();
 // You may take a look at these screencasts in order to understand node modules concept better:
 // https://youtu.be/g740J-RyoR4
 // https://youtu.be/xs6sSylr-88 (first 10 minutes, the second part is not necessary for now)
-const Star = require("../Star");
+// const Star = require("../Star");
 // Note that it is not class method!
 // I don't create class instance here, google node modules exports, watch screencasts.
-const generateStarsList = Star.generateStarsList;
+// const generateStarsList = Star.generateStarsList;
 
 function testGeneratedListLength() {
     const myField = new Field(640, 480);
-    const starsList = generateStarsList(10, myField);
+    const myAmount = 10
+    const starsList = generateStarsList(myAmount, myField);
 
     const expectedListLength = 10
     assert(
@@ -64,11 +67,11 @@ function testGeneratedListPointsRange() {
     for (let i = 0; i< starsList.length; i++) {
         const star = starsList[i];
         assert(
-            star.xPosition < 640 && star.xPosition > 0,
+            star.positionX < 640 && star.positionX > 0,
             `X coordinate of the star doesn't fit field range (${star.xPosition})`
         );
         assert(
-            star.yPosition < 640 && star.yPosition > 0,
+            star.positionY < 640 && star.positionY > 0,
             `Y coordinate of the star doesn't fit field range (${star.yPosition})`
         );
     }
