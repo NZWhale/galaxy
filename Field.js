@@ -3,7 +3,7 @@
 
 
 class Field {// this class describe properties of field
-    constructor(width, height){
+    constructor(width, height) {
         this.width = width
         this.height = height
     }

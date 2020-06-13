@@ -31,3 +31,4 @@ if (typeof module === "object") { // if we are in node environment
     module.exports = Star; // default export
     module.exports.generateStarsList = generateStarsList 
 }
+
