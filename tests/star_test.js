@@ -26,13 +26,43 @@ function testStarCreation() {
 }
 
 function testStarMove() {
-    const myStar = new Star(10, 10, 0.5, -0.25);
-    myStar.move();
-    assert(myStar.positionX == 10.5, "x position wass not changed properly")
-    assert(myStar.positionY == 9.75, "y position wass not changed properly")
+    
+    // const myField = new Field(100, 100);
+    // const myStar = new Star(10, 10, 0.5, -0.25);
+    // myStar.move(myField0);
+    // assert(myStar.positionX == 10.5, "x position wass not changed properly")
+    // assert(myStar.positionY == 9.75, "y position wass not changed properly")
+
+    // +x bounce
+    const myField = new Field(100, 100);
+    const myStar0 = new Star(99, 50, 0.5, -0.25);
+    myStar0.move(myField);
+    assert(myStar0.positionX == 98.5, "+x bounce doesn't properly changes coordinates")
+    assert(myStar0.vectorX == -0.5, "+x bounce doesn't properly changes vector")
+
+    // -x bounce
+    const myField1 = new Field(100, 100);
+    const myStar1 = new Star(1, 50, -0.5, -0.25);
+    myStar1.move(myField1);
+    assert(myStar1.positionX == 1.5, "-x bounce doesn't properly changes coordinates")
+    assert(myStar1.vectorX == 0.5, "-x bounce doesn't properly changes vector")
+
+    // +y bounce
+    const myField2 = new Field(100, 100);
+    const myStar2 = new Star(50, 99, 0.5, 0.5);
+    myStar2.move(myField2);
+    assert(myStar2.positionY == 98.5, "+y bounce doesn't properly changes coordinates")
+    assert(myStar2.vectorY == -0.5, "+y bounce doesn't properly changes vector")
+
+    // -y bounce
+    const myField3 = new Field(100, 100);
+    const myStar3 = new Star(50, 1, 0.5, -0.25);
+    myStar3.move(myField3);
+    assert(myStar3.positionY == 1.25, "-y bounce doesn't properly changes coordinates")
+    assert(myStar3.vectorY == 0.25, "-y bounce doesn't properly changes vector")
 }
 
-testStarCreation();
+// testStarCreation();
 testStarMove();
 
 
@@ -71,7 +101,7 @@ function testGeneratedListPointsRange() {
             `X coordinate of the star doesn't fit field range (${star.xPosition})`
         );
         assert(
-            star.positionY < 640 && star.positionY > 0,
+            star.positionY < 480 && star.positionY > 0,
             `Y coordinate of the star doesn't fit field range (${star.yPosition})`
         );
     }
