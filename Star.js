@@ -9,24 +9,25 @@ class Star { //this class desribes properties of star
     }
     move(field) {
         if (this.positionX >= (field.width - 1)){
-            this.vectorX = 0 - (this.vectorX)
+            this.vectorX = 0 - this.vectorX
             this.positionX += this.vectorX
             this.positionY += this.vectorY
         } else if (this.positionX <= 1){
-            this.vectorX = 0 - (this.vectorX)
+            this.vectorX = 0 - this.vectorX
             this.positionX += this.vectorX
             this.positionY += this.vectorY
         }else if (this.positionY >= (field.height - 1)){
-            this.vectorY = 0 - (this.vectorY)
+            this.vectorY = 0 - this.vectorY
             this.positionX += this.vectorX
             this.positionY += this.vectorY
         }else if (this.positionY <= 1){
-            this.vectorY = 0 - (this.vectorY)
+            this.vectorY = 0 - this.vectorY
             this.positionX += this.vectorX
             this.positionY += this.vectorY
         } else { 
             this.positionX += this.vectorX
-            this.positionY += this.vectorY}
+            this.positionY += this.vectorY
+        }
 
     }
 };
