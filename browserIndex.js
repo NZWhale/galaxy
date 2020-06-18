@@ -5,8 +5,8 @@ const CANVAS = document.getElementById("space");
 const ctx = CANVAS.getContext("2d");
 const field = new Field(1680, 900);
 const starsList = generateStarsList(100, field);
-CANVAS.width = field.width;
-CANVAS.height = field.height;
+CANVAS.width = innerWidth //field.width;
+CANVAS.height = innerHeight //field.height;
 
 const distanceThreshold = 250;
 const refreshRateMillisseconds = 30;
