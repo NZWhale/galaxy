@@ -12,10 +12,10 @@ const distanceThreshold = 250;
 const refreshRateMillisseconds = 30;
 function loop() { // executes each 10ms
     for (let i = 0; i < starsList.length; i++) {
-        ctx.clearRect(0, 0, CANVAS.width, CANVAS.height);
+        clear(ctx)
         starsList[i].move(field)
     }
-    // clear(ctx)
+
     drawStarsOnCanvas(ctx, starsList);
     const allLines = createAllPossibleLinesBetweenStars(starsList);
     const linesToDraw = filterLinesByDistance(allLines, distanceThreshold);

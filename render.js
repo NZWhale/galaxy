@@ -21,6 +21,10 @@ function drawLinesOnCanvas(canvasContext, filteredLinesList) {
     }
 }
 
+function clear(canvasContext){
+    canvasContext.clearRect(0, 0, CANVAS.width, CANVAS.height);
+}
+
 if (typeof module === "object") { // if we are in node environment
     console.log("render module was loaded");
     module.exports.drawStarsOnCanvas = drawStarsOnCanvas;
