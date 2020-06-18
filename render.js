@@ -2,7 +2,7 @@
 
 function drawStarsOnCanvas(canvasContext, starsList) {
     for (let i = 0; i < starsList.length; i++) {
-        canvasContext.fillStyle = 'red';
+        canvasContext.fillStyle = 'grey';
         canvasContext.beginPath();
         canvasContext.arc(starsList[i].positionX, starsList[i].positionY, 2, 0, Math.PI * 2);
         canvasContext.fill(); 
@@ -16,6 +16,7 @@ function drawLinesOnCanvas(canvasContext, filteredLinesList) {
         canvasContext.beginPath();
         canvasContext.moveTo(line.aX,line.aY);
         canvasContext.lineTo(line.bX,line.bY);
+        canvasContext.strokeStyle = "#708090";
         canvasContext.closePath();
         canvasContext.stroke();
     }
